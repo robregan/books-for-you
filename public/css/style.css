@@ -56,4 +56,28 @@ body {
   .accordion .card {
     height: auto;
   }
+   /* this is my code  */
+  .flex-container {
+    display: grid;
+  }
+  
+  
+  
+  * {
+    box-sizing: border-box;
+  }
+  .btn-secondary{
+    height: 34px;
+    
+    position: relative; top: 35px;
+    
+    width: 95.33%;
+  
+  
+    
+    background-color: red;
+  }
+  .btn-profile{
+    background-color: red;
+  }
   
