@@ -1,71 +1,155 @@
-<%- include('partials/header') -%>
-  <div class="container">
-    <div class="row mt-5">
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+    <title>InstaFam</title>
+
+    <!-- Icon -->
+    <link
+    rel="icon"
+    type="image/png"
+    sizes="32x32"
+    href="/imgs/favicon-32x32.png"
+    />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+    crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+<body>
+  <header class="container">
+    <div class="text-center">
+      <a href="/profile"><img src="/imgs/cover.png" class="logo" alt="logo"></a></h1><br>
+      <span>The Better Social Network</span>
+    </div>
+  </header>
+  
+<div class="container">
+  <div class="row mt-5">
       <div class="col-6">
-        <div>
-          <p><strong>User Name</strong>: <%= user.userName %>
-          </p>
-          <p><strong>Email</strong>: <%= user.email %>
-          </p>
-          <a href="/logout" class="col-3 btn btn-primary">Logout</a>
-        </div>
-        <div class="mt-5">
-          <h2>Add a post:</h2>
-          <form action="/post/createPost" enctype="multipart/form-data" method="POST">
-            <div class="mb-3">
-              <label for="title" class="form-label">Title*</label>
-              <input type="text" class="form-control" id="title" name="title">
-            </div>
-            <div class="mb-3">
-              <label for="location" class="form-label">Location*</label>
-              <input type="text" class="form-control" id="location" name="location">
-            </div>
-            <div class="mb-3">
-              <label for="subject" class="form-label">Subject*</label>
-              <input type="text" class="form-control" id="subject" name="subject">
-            </div>
-            <div class="mb-3">
-              <label for="courseNumber" class="form-label">Course Number</label>
-              <input type="text" class="form-control" id="courseNumber" name="courseNumber">
-            </div>
-            <div class="mb-3">
-              <label for="caption" class="form-label">Caption*</label>
-              <textarea class="form-control" id="caption" name="caption"></textarea>
-            </div>
-            <div class="mb-3">
-              <label for="cost" class="form-label">Cost*</label>
-              <textarea class="form-control" id="cost" name="cost"></textarea>
-            </div>
-            <div class="mb-3">
-              <label for="contactInfo" class="form-label">Contact Info*</label>
-              <textarea class="form-control" id="contactInfo" name="contactInfo"></textarea>
-            </div>
-            <div class="mb-3">
-              <label for="imgUpload" class="form-label">Image* (only .jpg .jpeg .png and .gif files supported)</label>
-              <input type="file" class="form-control" id="imageUpload" name="file">
-            </div>
+          <div>
+              <p><strong>User Name</strong>: <%= user.userName %></p>
+              <p><strong>Email</strong>: <%= user.email %></p>
+                <a class="btn btn-primary" href="/feed">Return to Feed</a>
 
-            <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
-            <h3>(*required)</h3>
-
-          </form>
-        </div>
+              <a href="/logout" class="col-3 btn btn-primary">Logout</a>
+          </div>
+          <div class="mt-5">
+            <h2>Add a post:</h2>
+            <!-- Accordion Form -->
+            <form action="/post/createPost" enctype="multipart/form-data" method="POST">
+              <div class="accordion" id="accordionExample">
+                <div class="card">
+                  <div class="card-header" id="headingOne">
+                    <h2 class="mb-0">
+                      <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Book Info
+                      </button>
+                    </h2>
+                  </div>
+              
+                  <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                    <div class="card-body">
+                      <div class="mb-3">
+                        <label for="title" class="form-label">Title*</label>
+                        <input type="text" class="form-control" id="title" name="title">
+                      </div>
+                      <div class="mb-3">
+                        <label for="caption" class="form-label">Caption*</label>
+                        <textarea class="form-control" id="caption" name="caption"></textarea>
+                      </div>
+                      <div class="mb-3">
+                        <label for="subject" class="form-label">Subject*</label>
+                        <input type="text" class="form-control" id="subject" name="subject">
+                    </div>
+                    <div class="mb-3">
+                      <label for="courseNumber" class="form-label">Course Number</label>
+                      <input type="text" class="form-control" id="courseNumber" name="courseNumber">
+                  </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header" id="headingTwo">
+                    <h2 class="mb-0">
+                      <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Seller Info
+                      </button>
+                    </h2>
+                  </div>
+                  <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                    <div class="card-body">
+                      <div class="mb-3">
+                        <label for="cost" class="form-label">Cost*</label>
+                        <textarea class="form-control" id="cost" name="cost"></textarea>
+                      </div>
+                      <div class="mb-3">
+                        <label for="contactInfo" class="form-label">Contact Info*</label>
+                        <textarea class="form-control" id="contactInfo" name="contactInfo"></textarea>
+                      </div>
+                      <div class="mb-3">
+                        <label for="location" class="form-label">Location*</label>
+                        <input type="text" class="form-control" id="location" name="location">
+                    </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header" id="headingThree">
+                    <h2 class="mb-0">
+                      <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Add Image
+                      </button>
+                    </h2>
+                  </div>
+                  <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                    <div class="card-body">
+                      <div class="mb-3">
+                        <label for="imgUpload" class="form-label">Image* (only .jpg .jpeg .png and .gif files supported)</label>
+                        <input type="file" class="form-control" id="imageUpload" name="file">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>      
+              <button type="submit" class="btn btn-primary" value="Upload">Submit</button> 
+              <h3>(*required)</h3>
+            </form>
+          </div>
       </div>
+
+      <!-- User Posts -->
       <div class="col-6">
+        <h2 class="text-center">My Listings</h2>
         <ul class="row list-unstyled">
-          <% for(var i=0; i<posts.length; i++) {%>
-            <li class="col-6 justify-content-between mt-5">
-              <a href="/post/<%= posts[i]._id%>">
-                <img class="img-fluid" src="<%= posts[i].image%>">
-              </a>
-            </li>
-            <% } %>
+        <% for(var i=0; i<posts.length; i++) {%>
+          <li class="col-6 justify-content-between mt-5">
+            <a href="/post/<%= posts[i]._id%>">
+              <img class="img-fluid card" src="<%= posts[i].image%>">
+            </a>
+          </li>
+        <% } %>
         </ul>
-        <div class="row justify-content-center mt-5">
-          <a class="btn btn-primary" href="/feed">Return to Feed</a>
-        </div>
-      </div>
+
+      </div>  
     </div>
   </div>
-  </div>
-  <%- include('partials/footer') -%>
+</div>
+<!-- Necessary footer stuff for accordion -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
