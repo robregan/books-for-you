@@ -1,0 +1,37 @@
+body {
+    background: #222222;
+    font-family: "Itim", cursive;
+    font-size: 1.2em;
+    color: white;
+    padding-top: 50px;
+  }
+  a {
+    color: #fff59e;
+  }
+  h3 {
+    float: right;
+  }
+  .logo {
+    height: 200px;
+    width: 25%;
+  }
+  span {
+    font-style: italic;
+  }
+  .small {
+    height: 40px;
+    width: 15%;
+  }
+  
+  .card {
+    width: 100%;
+    height: 20vw;
+  }
+  
+  .container-image {
+    background: url("../imgs/bookshelf.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 60vh;
+  }

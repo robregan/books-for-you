@@ -1,0 +1,22 @@
+<%- include('partials/header') -%>
+
+  <main class="container">
+
+    <div class="row justify-content-center mt-5">
+      <ul class="row list-unstyled">
+        <% for(var i=0; i<search.length; i++) {%>
+          <li class="col-3 justify-content-between mt-5">
+            <a href="/post/<%= search[i]._id%>">
+              <img class="img-fluid" src="<%= search[i].image%>">
+              <!-- Hardcoded value, as we don't have database with cost field set up just yet -->
+              <p>
+                <%= search[i].title %>
+              </p>
+            </a>
+          </li>
+          <% } %>
+      </ul>
+    </div>
+    <button class="btn btn-primary mb-3"><a href="/feed">Return to feed</a></button>
+  </main>
+  <%- include('partials/footer') -%>
