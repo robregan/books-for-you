@@ -3,19 +3,19 @@ const mongoose = require("mongoose");
 const PostSchema = new mongoose.Schema({
   title: {
     type: String,
-    required: true,
+  //  required: true,
   },
   image: {
     type: String,
-    require: true,
+    required: true,
   },
   cloudinaryId: {
     type: String,
-    require: true,
+    required: true,
   },
   caption: {
     type: String,
-    required: true,
+  //  required: true,
   },
   user: {
     type: mongoose.Schema.Types.ObjectId,
@@ -27,22 +27,22 @@ const PostSchema = new mongoose.Schema({
   },
   location: {
     type: String,
-    required: true,
+ //   required: true,
   },
   contactInfo: {
     type: String,
-    required: true,
+ //   required: true,
   },
   subject: {
     type: String,
-    required: true,
+ //   required: true,
   },
   courseNumber: {
     type: String,
   },
   cost: {
     type: Number,
-    required: true,
+ //   required: true,
   },
 });
 
