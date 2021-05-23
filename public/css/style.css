@@ -80,4 +80,10 @@ body {
   .btn-profile{
     background-color: red;
   }
-  
+#searchBook{   
+    width: 25%;
+}
+#searchB{
+    margin-left: 19.5%;
+    
+}
