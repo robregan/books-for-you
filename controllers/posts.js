@@ -54,7 +54,9 @@ module.exports = {
       console.log("Post has been added!");
       res.redirect("/profile");
     } catch (err) {
-      console.log(err);
+      console.log(err)
+      // for now if no image is uploaded, will just redirect back instead of crashing. need to get an error message displayed if this happens.
+      res.redirect("/profile")
     }
   },
   likePost: async (req, res) => {
