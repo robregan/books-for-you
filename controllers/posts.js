@@ -36,8 +36,8 @@ module.exports = {
   createPost: async (req, res) => {
     try {
       // Upload image to cloudinary
+      // console.log("This is the result");
       const result = await cloudinary.uploader.upload(req.file.path);
-
       await Post.create({
         title: req.body.title,
         image: result.secure_url,
@@ -54,9 +54,9 @@ module.exports = {
       console.log("Post has been added!");
       res.redirect("/profile");
     } catch (err) {
-      console.log(err)
+      // alert(err);
       // for now if no image is uploaded, will just redirect back instead of crashing. need to get an error message displayed if this happens.
-      res.redirect("/profile")
+      res.redirect("/profile");
     }
   },
   likePost: async (req, res) => {
@@ -93,12 +93,12 @@ module.exports = {
 
       let search = await Post.find({
         $text: {
-          $search: query
-        }
-      })
-      res.render('listSearch.ejs', { search })
+          $search: query,
+        },
+      });
+      res.render("listSearch.ejs", { search });
     } catch (err) {
-      console.log(err)
+      console.log(err);
     }
-  }
+  },
 };
